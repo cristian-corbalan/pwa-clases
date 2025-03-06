@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    name="viewport"
+  >
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+  <title>Aplicaciones web progresivas - Ejercicio 01</title>
+
+  <link href="../assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/estilos/main.css" rel="stylesheet">
+
+  <!--Code highlight-->
+  <script src="../assets/scripts/prismjs.js"></script>
+  <link href="../assets/estilos/prism-atom-dark.min.css" rel="stylesheet">
+
+  <script defer src="js/ejercicio-01.js"></script>
+
+  <style>
+    #respuesta {
+      padding: 0;
+
+      li {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+        gap: 1rem;
+        row-gap: .5rem;
+
+        &:nth-child(even) {
+          background-color: #131313;
+        }
+
+        h2 {
+          font-size: 1rem
+        }
+
+        .edad {
+          font-weight: 300;
+        }
+
+        .email {
+          width: 100%;
+          color: #c8c8c8;
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="web">
+  <header>
+    <h1>Aplicaciones web progresivas - Ejercicio 01</h1>
+  </header>
+  <main>
+    <div class="consigna">
+      <h2>Consigna</h2>
+      <ul>
+        <li>Obtener los datos del archivo <code>util/datos.json</code>.</li>
+        <li>
+          <span>Generar la siguiente estructura por cada objeto obtenido y agregarlo al <code>ul#respuesta</code>:</span>
+          <pre><code class="language-markup">&lt;li data-id="ID">
+  &lt;h2>NOMBRE&lt;/h2>
+  &lt;p class="edad">EDAD años&lt;/p>
+  &lt;p class="email">EMAIL&lt;/p>
+&lt;/li></code></pre>
+        </li>
+      </ul>
+    </div>
+
+    <ul id="respuesta"></ul>
+  </main>
+  <footer>
+    <ul>
+      <li>Profesor Cristian Corbalan</li>
+      <li>
+        <a
+          href="mailto:cristian.corbalan@davinci.edu.ar"
+          target="_blank"
+        >cristian.corbalan@davinci.edu.ar</a>
+      </li>
+      <li>Programación 1</li>
+    </ul>
+  </footer>
+</div>
+</body>
+</html>
