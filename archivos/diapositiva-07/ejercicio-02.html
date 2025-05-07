@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    name="viewport"
+  >
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+  <title>Aplicaciones web progresivas - Ejercicio 01</title>
+
+  <link href="../assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/estilos/main.css" rel="stylesheet">
+
+  <!--Code highlight-->
+  <script src="../assets/scripts/prismjs.js"></script>
+  <link href="../assets/estilos/prism-atom-dark.min.css" rel="stylesheet">
+
+  <script defer src="soluciones/ejercicio-02.js"></script>
+</head>
+<body>
+<div class="web">
+  <header>
+    <h1>Aplicaciones web progresivas - Ejercicio 01</h1>
+  </header>
+  <main>
+    <div class="consigna">
+      <h2>Consigna</h2>
+      <ul>
+        <li>
+          <span>Realiza los siguientes pasos uno a uno para trabajar con una base de datos local:</span>
+          <ul>
+            <li>
+              <details>
+                <summary class="font-bold">🗃️🚀 Primer contacto con IndexedDB</summary>
+                <ul>
+                  <li>Abrí una base de datos llamada librosDB y con versión 1 usando indexedDB.open.</li>
+                  <li>Escuchar el evento onupgradeneeded y mostrar un console.log.</li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="font-bold">📁🔑 Crear estructuras de datos básicas</summary>
+                <ul>
+                  <li>Dentro de onupgradeneeded:</li>
+                  <li>Obtener la referencia a la base de datos desde event.target.result.</li>
+                  <li>Crear un objectStore llamado libros con keyPath: "id" y autoIncrement: true.</li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="font-bold">✍️📘 Insertar un registro básico</summary>
+                <ul>
+                  <li>Escuchar el evento success y obtener la referencia a la base de datos (event.target.result).</li>
+                  <li>Iniciar una transacción (transaction) de tipo readwrite hacia el almacén libros.</li>
+                  <li>Obtener el objectStore desde la transacción.</li>
+                  <li>Agregar un libro con titulo y precio usando add.</li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="font-bold">🔍📚 Leer registros almacenados</summary>
+                <ul>
+                  <li>Iniciar una transacción de solo lectura (readonly) hacia el almacén libros.</li>
+                  <li>Obtener el objectStore desde la transacción.</li>
+                  <li>Usar getAll() para recuperar todos los libros.</li>
+                  <li>Mostrar los resultados en consola dentro del evento onsuccess.</li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="font-bold">🔍💵 Leer registros por precios</summary>
+                <ul>
+                  <li>Dentro de onupgradeneeded:</li>
+
+                  <li>Crear el índice precio_indice para la propiedad precio al almacén libros (libros.createIndex).
+                  </li>
+
+                  <li>Utilizar getAll() desde el índice para obtener todos los libros con un precio igual a 19.99.</li>
+
+                  <li>Mostrar los resultados en consola dentro del evento onsuccess.</li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="font-bold">🗑️🗃️ Eliminar registros por clave</summary>
+                <ul>
+                  <li>Iniciar una transacción de escritura (readwrite) hacia el almacén libros.</li>
+                  <li>Obtener el objectStore desde la transacción.</li>
+                  <li>Usar delete(id) para eliminar el primer libro almacenado en la base de datos.</li>
+                  <li>Mostrar un mensaje en consola cuando se elimine correctamente (onsuccess).</li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary class="font-bold">🧠🧩 Modularizar código y vincularlo con la interfaz</summary>
+                <ul>
+                  <li>Guardar la referencia a la base de datos abierta en una variable global (Ejemplo: db).</li>
+                  <li>
+                    <span>Crear funciones separadas para:</span>
+                    <ul>
+                      <li><code>agregarLibro(libro)</code></li>
+                      <li><code>obtenerLibros()</code></li>
+                      <li><code>obtenerLibrosPorPrecio(precio)</code></li>
+                      <li><code>eliminarLibro(id)</code></li>
+                    </ul>
+                  </li>
+                  <li>Agregar botones en el HTML para cada acción y asociarlos a su función usando addEventListener.
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <button id="agregar">Agregar libro</button>
+    <button id="obtener">Obtener libros</button>
+    <button id="obtenerPrecio">Obtener libros por precio</button>
+    <button id="eliminar">Eliminar libro</button>
+  </main>
+  <footer>
+    <ul>
+      <li>Profesor Cristian Corbalan</li>
+      <li>
+        <a
+          href="mailto:cristian.corbalan@davinci.edu.ar"
+          target="_blank"
+        >cristian.corbalan@davinci.edu.ar</a>
+      </li>
+      <li>Aplicaciones Web progresivas</li>
+    </ul>
+  </footer>
+</div>
+</body>
+</html>
