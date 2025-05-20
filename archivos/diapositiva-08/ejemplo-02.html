@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    name="viewport"
+  >
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+  <title>Aplicaciones web progresivas - Ejemplo 02</title>
+
+  <link href="../assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="../assets/estilos/main.css" rel="stylesheet">
+
+  <!--Code highlight-->
+  <script src="../assets/scripts/prismjs.js"></script>
+  <link href="../assets/estilos/prism-atom-dark.min.css" rel="stylesheet">
+
+  <script defer src="js/ejemplo-02.js"></script>
+
+  <style>
+    #estado-ui {
+      margin-bottom: 20px;
+      border-radius: 2px;
+
+      & span {
+        font-weight: bold;
+      }
+
+      &.online {
+        color: #51cd72;
+      }
+
+      &.offline {
+        color: #df7985;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="web">
+  <header>
+    <h1>Aplicaciones web progresivas - Ejemplo 02</h1>
+  </header>
+  <main>
+    <div class="consigna">
+      <h2>Información</h2>
+      <ul>
+        <li>Este es un ejemplo que simula como se podría realizar el proceso de sincronización.</li>
+        <li>En este caso, el usuario puede cargar distintos libros que, según su conexión, se sincronizarán o no con el
+          servidor (simulado)
+        </li>
+        <li>También se detectará los cambiós de conexión del usuario en tiempo real para realizar la sincronización sin
+          tener que reiniciar la página.
+        </li>
+        <li><strong>Nota</strong>: Este es un ejemplo bastante avanzado, se combinan muchas técnicas que estuvimos
+          viendo hasta ahora en la cursada. Asi que no te preocupes si no lo entiendes a la primera ✌️😗.
+        </li>
+      </ul>
+    </div>
+
+    <div id="estado-ui" class="offline">Estado de conexión: <span>Offline</span></div>
+
+    <form id="formulario-libro" class="mb-4" action="#">
+      <div class="mb-4">
+        <label for="titulo">Título</label>
+        <input id="titulo" name="titulo" type="text">
+      </div>
+      <div class="mb-4">
+        <label for="precio">Precio</label>
+        <input id="precio" name="precio" type="number">
+      </div>
+      <button>Agregar</button>
+    </form>
+
+    <h2 class="mb-4">Nuestra biblioteca</h2>
+    <ul id="biblioteca"></ul>
+  </main>
+  <footer>
+    <ul>
+      <li>Profesor Cristian Corbalan</li>
+      <li>
+        <a
+          href="mailto:cristian.corbalan@davinci.edu.ar"
+          target="_blank"
+        >cristian.corbalan@davinci.edu.ar</a>
+      </li>
+      <li>Aplicaciones Web progresivas</li>
+    </ul>
+  </footer>
+</div>
+</body>
+</html>
