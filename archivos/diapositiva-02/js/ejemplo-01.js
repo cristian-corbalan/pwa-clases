@@ -1,20 +1,10 @@
 'use strict';
 
-const tareas = [
-  {
-    contenido: 'Limpiar la casa',
-    completada: false,
-    encargado: 'Marco Diaz',
-    fechaLimite: '2040-01-05',
-  },
-  {
-    contenido: 'Limpiar la casa',
-    completada: true,
-  },
-  {
-    contenido: 'Limpiar la casa',
-    completada: false,
-  },
+const productos = [
+  { id: 1, nombre: 'Laptop', precio: 1200, stock: 15 },
+  { id: 2, nombre: 'Teléfono', precio: 800, stock: 30 },
+  { id: 3, nombre: 'Teclado', precio: 45, stock: 100 },
+  { id: 4, nombre: 'Monitor', precio: 300, stock: 20 },
 ];
 
-console.log('tareas:', tareas);
+console.log('productos:', productos);
